@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Maciej Puczyński – QA Manager | Project Manager | Strony internetowe</title>
+  <meta name="description" content="Maciej Puczyński – QA Manager i Project Manager z ponad 10-letnim doświadczeniem w projektach IT, QA, Agile, Scrum, prostych stronach internetowych oraz praktycznym wykorzystaniu AI i GEO." />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: #f4f7fb;
+      color: #172033;
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(7, 26, 51, 0.92);
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      padding: 16px 20px;
+      z-index: 1000;
+      box-shadow: 0 8px 30px rgba(0,0,0,.15);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      color: #35e0d0;
+    }
+
+    header {
+      min-height: 90vh;
+      padding: 140px 10% 90px;
+      background:
+        radial-gradient(circle at top right, rgba(53,224,208,.35), transparent 35%),
+        linear-gradient(135deg, #061a33, #004f75 55%, #00b8a9);
+      color: white;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-label {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 1.05;
+      margin: 0 0 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 760px;
+      opacity: .92;
+    }
+
+    .hero-buttons {
+      margin-top: 34px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #06345b;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,.5);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 25px 80px rgba(0,0,0,.25);
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .hero-card ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    section {
+      padding: 90px 10%;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 46px);
+      color: #06345b;
+      margin: 0 0 18px;
+      line-height: 1.15;
+    }
+
+    .lead {
+      font-size: 19px;
+      max-width: 900px;
+      color: #475569;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .panel {
+      background: white;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, .08);
+    }
+
+    .highlight {
+      border-left: 6px solid #00b8a9;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .stat {
+      background: #f8fafc;
+      border-radius: 22px;
+      padding: 24px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      min-height: 145px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: .25s ease;
+    }
+
+    .stat:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(15, 23, 42, .08);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 34px;
+      color: #00a897;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .brands-wrapper {
+  max-width: 760px;
+  margin: 34px auto 0;
+  overflow: hidden;
+  position: relative;
+  padding-top: 10px
+}
+
+.brands {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  animation: scrollBrands 70s linear infinite;
+}
+
+.brands:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollBrands {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+    .tag {
+      flex: 0 0 auto;
+      background: #e7f8f6;
+      color: #075f59;
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.25s ease;
+      border: 1px solid #c8ece8;
+      white-space: nowrap;
+    }
+
+    .tag:hover {
+      transform: translateY(-3px);
+      background: #d7fffa;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 38px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 26px;
+      padding: 30px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, .08);
+      border: 1px solid #e8eef6;
+      transition: .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 60px rgba(15, 23, 42, .13);
+    }
+
+    .card span {
+      font-size: 34px;
+    }
+
+    .card h3 {
+      color: #06345b;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .dark {
+      background: #071a33;
+      color: white;
+    }
+
+    .dark .section-title {
+      color: white;
+    }
+
+    .dark .lead {
+      color: #cbd5e1;
+    }
+
+    .dark .card {
+      background: rgba(255,255,255,.08);
+      color: white;
+      border: 1px solid rgba(255,255,255,.14);
+    }
+
+    .dark .card h3 {
+      color: white;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .process div {
+      background: white;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, .08);
+      border: 1px solid #e8eef6;
+    }
+
+    .process strong {
+      color: #00a897;
+      font-size: 26px;
+    }
+
+    .contact-box {
+      background: white;
+      border-radius: 32px;
+      padding: 42px;
+      box-shadow: 0 25px 70px rgba(15, 23, 42, .1);
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 14px;
+      border: 1px solid #cbd5e1;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #00b8a9;
+      box-shadow: 0 0 0 4px rgba(0,184,169,.12);
+    }
+
+    textarea {
+      min-height: 170px;
+      resize: vertical;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    button {
+      background: #06345b;
+      color: white;
+      border: none;
+      padding: 15px 28px;
+      border-radius: 999px;
+      font-weight: 800;
+      cursor: pointer;
+      font-size: 16px;
+      transition: .25s ease;
+    }
+
+    button:hover {
+      background: #00a897;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      background: linear-gradient(90deg, #061a33, #00b8a9);
+      color: white;
+      text-align: center;
+      padding: 34px 10px;
+      font-weight: 600;
+    }
+
+    .side-nav {
+  position: fixed;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.side-nav a {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: #c1121f;
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  white-space: nowrap;
+  box-shadow: 0 12px 30px rgba(0,0,0,.2);
+  transition: .3s ease;
+  transform-origin: right center;
+}
+
+.side-nav a::after {
+  content: attr(data-label);
+  max-width: 0;
+  opacity: 0;
+  margin-right: 0;
+  transition: .3s ease;
+}
+
+.side-nav a:hover,
+.side-nav a.active {
+  width: 165px;
+  padding-right: 17px;
+}
+
+.side-nav a:hover::after,
+.side-nav a.active::after {
+  max-width: 120px;
+  opacity: 1;
+  margin-right: 10px;
+}
+
+.side-nav a span {
+  transition: .2s ease;
+}
+
+.side-nav a:hover span,
+.side-nav a.active span {
+  opacity: 0;
+  width: 0;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .side-nav {
+    display: none;
+  }
+}
+
+    @media (max-width: 900px) {
+      header,
+      .split,
+      .cards,
+      .process,
+      form {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 18px;
+        overflow-x: auto;
+        justify-content: flex-start;
+      }
+
+      section {
+        padding: 70px 7%;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="side-nav">
+  <a href="#start" data-label="Start"><span>⌂</span></a>
+  <a href="#about" data-label="O mnie"><span>i</span></a>
+  <a href="#experience" data-label="Doświadczenie"><span>★</span></a>
+  <a href="#services" data-label="Współpraca"><span>✦</span></a>
+  <a href="#contact" data-label="Kontakt"><span>✉</span></a>
+</div>
+
+  <nav>
+    <a href="#start">Start</a>
+    <a href="#about">O mnie</a>
+    <a href="#experience">Doświadczenie</a>
+    <a href="#services">Współpraca</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+
+  <header id="start">
+    <div class="hero">
+      <span class="hero-label">QA • Project Management • Agile • Web • AI • GEO</span>
+      <h1>Pomagam dowozić lepsze projekty IT.</h1>
+      <p>
+        Łączę doświadczenie QA Managera, Project Managera i osoby pracującej blisko biznesu.
+        Pomagam porządkować procesy, zwiększać jakość produktów cyfrowych i tworzyć proste,
+        konkretne strony internetowe dla firm oraz osób prywatnych.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Porozmawiajmy o projekcie</a>
+        <a href="#services" class="btn btn-secondary">Zobacz, w czym pomagam</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>Nie tylko testowanie.</h3>
+      <p>
+        Patrzę na projekt szerzej: jakość, komunikacja, ryzyko, proces, zespół,
+        klient i realny cel biznesowy.
+      </p>
+      <ul>
+        <li>QA i strategia testów</li>
+        <li>Project Management</li>
+        <li>Agile, Scrum, Kanban</li>
+        <li>Procesy, discovery, warsztaty</li>
+        <li>Praktyczne wykorzystanie AI i GEO</li>
+      </ul>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2 class="section-title">Kim jestem?</h2>
+    <p class="lead">
+      Od ponad 10 lat pracuję przy projektach technologicznych — od branży gier,
+      przez aplikacje webowe i mobilne, aż po duże platformy dla znanych marek.
+      Moim głównym obszarem jest jakość, zarządzanie projektami i usprawnianie pracy zespołów.
+    </p>
+
+    <div class="split" style="margin-top:38px;">
+      <div class="panel highlight">
+        <h3>Łączę technologię, ludzi i biznes</h3>
+        <p>
+          W projektach najczęściej stoję pomiędzy zespołem, klientem, wymaganiami i realnym dowiezieniem efektu.
+          Przez lata pracowałem jako QA Manager, Project Manager, Product Owner oraz lider zespołów.
+        </p>
+        <p>
+          Bliskie jest mi podejście Agile, Scrum, Kanban oraz kultura pracy oparta na transparentności,
+          zaufaniu i odpowiedzialności. Mam też doświadczenie w środowiskach inspirowanych turkusowym modelem organizacji.
+        </p>
+      </div>
+
+      <div class="panel">
+        <div class="stats">
+          <div class="stat">
+            <strong>10+</strong>
+            lat doświadczenia
+          </div>
+
+          <div class="stat">
+            <strong>50+</strong>
+            projektów
+          </div>
+
+          <div class="stat">
+            <strong>15+</strong>
+            osób w zespołach
+          </div>
+
+          <div class="stat">
+            <strong>Enterprise</strong>
+            projekty i wdrożenia
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="section-title">Doświadczenie, które daje konkretną perspektywę</h2>
+    <p class="lead">
+      Pracowałem przy projektach dla globalnych i rozpoznawalnych marek — zawsze jako część firm,
+      które realizowały dla nich kontrakty lub projekty. Dzięki temu znam realia dużych wdrożeń,
+      pracy z klientem, kontroli jakości, budżetów, ryzyk i komunikacji między zespołami.
+    </p>
+
+    <div class="brands-wrapper">
+      <div class="brands">
+        <span class="tag">Mazda</span>
+        <span class="tag">TUI</span>
+        <span class="tag">Kyocera</span>
+        <span class="tag">PZPN</span>
+        <span class="tag">Ubisoft</span>
+        <span class="tag">Riot Games</span>
+        <span class="tag">Capcom</span>
+        <span class="tag">CD Projekt RED</span>
+        <span class="tag">Gaming</span>
+        <span class="tag">Web</span>
+        <span class="tag">Mobile</span>
+        <span class="tag">Enterprise</span>
+        <span class="tag">Agile</span>
+        <span class="tag">Scrum</span>
+        <span class="tag">Kanban</span>
+        <span class="tag">QA</span>
+        <span class="tag">Project Management</span>
+        <span class="tag">Product Owner</span>
+        <span class="tag">AI</span>
+        <span class="tag">GEO</span>
+        <span class="tag">WCAG</span>
+        <span class="tag">Discovery</span>
+        <span class="tag">Jira</span>
+        <span class="tag">Confluence</span>
+        <span class="tag">Postman</span>
+        <span class="tag">Swagger</span>
+        <span class="tag">Miro</span>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <span>🎯</span>
+        <h3>Jakość od początku</h3>
+        <p>
+          Strategia testów, proces QA, ryzyka, dostępność WCAG, testy funkcjonalne,
+          komunikacja z zespołem i klientem.
+        </p>
+      </div>
+
+      <div class="card">
+        <span>🧭</span>
+        <h3>Prowadzenie projektów</h3>
+        <p>
+          Planowanie, priorytety, warsztaty discovery, sprinty, raportowanie,
+          kontrola postępów i dowożenie rezultatów.
+        </p>
+      </div>
+
+      <div class="card">
+        <span>🤝</span>
+        <h3>Praca z ludźmi</h3>
+        <p>
+          Facylitacja spotkań, coaching zespołów, leadership, transparentność,
+          odpowiedzialność i usprawnianie współpracy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="dark">
+    <h2 class="section-title">W czym mogę pomóc?</h2>
+    <p class="lead">
+      Nie obiecuję magicznych rozwiązań. Pomagam tam, gdzie liczy się uporządkowanie,
+      doświadczenie projektowe i praktyczne podejście do technologii.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <span>✅</span>
+        <h3>QA Management</h3>
+        <p>
+          Pomagam budować lub usprawniać procesy testowe, strategie jakości,
+          checklisty, raportowanie błędów i podejście do ryzyka.
+        </p>
+      </div>
+
+      <div class="card">
+        <span>📌</span>
+        <h3>Project Management</h3>
+        <p>
+          Mogę pomóc w organizacji projektu, priorytetach, komunikacji,
+          prowadzeniu zespołu, warsztatach i uporządkowaniu chaosu.
+        </p>
+      </div>
+
+      <div class="card">
+        <span>🌐</span>
+        <h3>Proste strony internetowe</h3>
+        <p>
+          Tworzę proste, estetyczne strony wizytówkowe, portfolio i strony dla małych firm —
+          bez przepalania budżetu.
+        </p>
+      </div>
+
+      <div class="card">
+        <span>🤖</span>
+        <h3>AI w praktyce</h3>
+        <p>
+          Pomagam zrozumieć, jak rozsądnie używać narzędzi AI w pracy:
+          do analizy, planowania, treści, researchu i organizacji zadań.
+        </p>
+      </div>
+
+      <div class="card">
+        <span>🔎</span>
+        <h3>SEO i GEO</h3>
+        <p>
+          Rozwijam wiedzę w obszarze widoczności w Google i systemach AI.
+          Pomagam tworzyć treści bardziej czytelne dla ludzi, wyszukiwarek i modeli AI.
+        </p>
+      </div>
+
+      <div class="card">
+        <span>🧩</span>
+        <h3>Konsultacje produktowe</h3>
+        <p>
+          Mogę spojrzeć na Twój produkt, stronę lub proces z perspektywy QA,
+          PM-a i osoby pracującej przy dużych projektach.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Jak pracuję?</h2>
+    <p class="lead">
+      Lubię prostą, konkretną współpracę. Najpierw rozumiem problem, potem dobieram rozwiązanie.
+      Bez korporacyjnego nadęcia, ale z doświadczeniem wyniesionym z dużych projektów.
+    </p>
+
+    <div class="process">
+      <div>
+        <strong>01</strong>
+        <h3>Rozpoznanie</h3>
+        <p>Krótka rozmowa, cel, problem, oczekiwania.</p>
+      </div>
+
+      <div>
+        <strong>02</strong>
+        <h3>Plan</h3>
+        <p>Zakres, priorytety, ryzyka i sensowna kolejność działań.</p>
+      </div>
+
+      <div>
+        <strong>03</strong>
+        <h3>Realizacja</h3>
+        <p>Konkrety, transparentność i szybka informacja zwrotna.</p>
+      </div>
+
+      <div>
+        <strong>04</strong>
+        <h3>Usprawnienie</h3>
+        <p>Poprawki, wnioski i dalszy rozwój, jeśli ma to sens.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-box">
+      <h2 class="section-title" style="text-align:center;">Porozmawiajmy</h2>
+      <p class="lead" style="text-align:center; margin-left:auto; margin-right:auto;">
+        Masz projekt, stronę, problem z jakością, chaosem w procesie albo chcesz lepiej wykorzystać AI?
+        Napisz krótko, czego potrzebujesz.
+      </p>
+
+      <form action="https://formspree.io/f/mnjroyve" method="POST">
+        <div>
+          <label for="name">Imię i nazwisko</label>
+          <input type="text" id="name" name="name" placeholder="Twoje imię i nazwisko" required>
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Twój email" required>
+        </div>
+
+        <div class="full">
+          <label for="message">Wiadomość</label>
+          <textarea id="message" name="message" placeholder="Napisz, w czym mogę pomóc" required></textarea>
+        </div>
+
+        <div class="full" style="text-align:center;">
+          <button type="submit">Wyślij wiadomość</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Maciej Puczyński | QA • PM • Web • AI • GEO
+  </footer>
+
+<script>
+  const brands = document.querySelector('.brands');
+  brands.innerHTML += brands.innerHTML;
+</script>
+
+<script>
+  const sideLinks = document.querySelectorAll('.side-nav a');
+  const sections = document.querySelectorAll('header, section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        sideLinks.forEach(link => link.classList.remove('active'));
+
+        const activeLink = document.querySelector(`.side-nav a[href="#${entry.target.id}"]`);
+
+        if (activeLink) {
+          activeLink.classList.add('active');
+
+          setTimeout(() => {
+            activeLink.classList.remove('active');
+          }, 2000);
+        }
+      }
+    });
+  }, {
+    threshold: 0.45
+  });
+
+  sections.forEach(section => {
+    if (section.id) observer.observe(section);
+  });
+</script>
+
+</body>
+</html>
