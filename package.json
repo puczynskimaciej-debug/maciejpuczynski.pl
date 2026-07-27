@@ -1,0 +1,23 @@
+{
+  "name": "maciejpuczynski-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Portfolio Macieja Puczyńskiego z własnym CMS opartym o GitHub.",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "test:content": "node tests/content-audit.mjs",
+    "test:responsive": "node tests/responsive-audit.mjs",
+    "test": "npm run build && npm run test:content"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "playwright-core": "^1.62.0"
+  },
+  "dependencies": {
+    "markdown-it": "^14.3.0"
+  }
+}

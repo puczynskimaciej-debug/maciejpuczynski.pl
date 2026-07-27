@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+pageKey: contact
+permalink: /kontakt/index.html
+---
+<header class="page-hero page-hero--contact">
+  <div class="shell page-hero__grid">
+    <div><p class="eyebrow reveal">Kontakt</p><h1 class="reveal">Zbudujmy coś,<br>co <em>ma sens.</em></h1></div>
+    <p class="reveal">{{ site.contact.intro }}</p>
+  </div>
+</header>
+
+<section class="section contact-section">
+  <div class="shell contact-grid">
+    <aside class="contact-aside reveal">
+      <p class="eyebrow">Zacznijmy rozmowę</p>
+      <h2>{{ site.contact.availability }}</h2>
+      {% if site.contact.email %}
+      <div class="contact-item"><span>E-mail</span><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></div>
+      {% endif %}
+      <div class="contact-item"><span>Współpraca</span><strong>{{ site.contact.location }}</strong></div>
+      {% if site.profiles.github or site.profiles.linkedin %}
+      <div class="social-links">
+        {% if site.profiles.github %}<a href="{{ site.profiles.github }}" target="_blank" rel="noopener">GitHub ↗</a>{% endif %}
+        {% if site.profiles.linkedin %}<a href="{{ site.profiles.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>{% endif %}
+      </div>
+      {% endif %}
+    </aside>
+
+    <form class="contact-form reveal" name="kontakt" method="POST" action="/kontakt/?success=true" data-netlify="true" netlify-honeypot="bot-field" data-contact-form>
+      <input type="hidden" name="form-name" value="kontakt">
+      <p class="honeypot"><label>Nie wypełniaj tego pola: <input name="bot-field"></label></p>
+      <div class="form-status form-status--success" data-form-success hidden tabindex="-1">Dziękuję — wiadomość została wysłana. Odezwę się możliwie szybko.</div>
+      <div class="form-status form-status--error" data-form-error hidden tabindex="-1">Nie udało się wysłać wiadomości. Spróbuj ponownie lub skorzystaj z adresu e-mail.</div>
+      <div class="form-row">
+        <label>Imię <input name="name" type="text" autocomplete="name" required placeholder="Jak masz na imię?"></label>
+        <label>Adres e-mail <input name="email" type="email" autocomplete="email" required placeholder="twoj@email.pl"></label>
+      </div>
+      <label>Temat <input name="subject" type="text" required placeholder="W czym mogę pomóc?"></label>
+      <label>Wiadomość <textarea name="message" rows="7" required minlength="10" placeholder="Napisz kilka słów o projekcie lub wyzwaniu…"></textarea></label>
+      {% if site.contact.consentEnabled %}
+      <label class="consent"><input name="consent" type="checkbox" value="yes" required><span>{{ site.contact.consentText }}</span></label>
+      {% endif %}
+      <button class="button button--primary" type="submit">Wyślij wiadomość <span aria-hidden="true">↗</span></button>
+      <p class="form-note">Twoje dane nie są zapisywane w bazie tej strony.</p>
+    </form>
+  </div>
+</section>

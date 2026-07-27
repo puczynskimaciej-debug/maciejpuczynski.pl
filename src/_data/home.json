@@ -1,0 +1,71 @@
+{
+  "introEnabled": true,
+  "hero": {
+    "enabled": true,
+    "eyebrow": "QA • Project Management • Web • AI",
+    "title": "Pomagam dowozić lepsze projekty IT.",
+    "subtitle": "Łączę jakość, zarządzanie i technologię.",
+    "description": "Pracuję na styku zespołu, klienta i realnego celu biznesowego. Usprawniam procesy, dbam o jakość produktów cyfrowych oraz tworzę strony, narzędzia i aplikacje.",
+    "primaryCta": "Zobacz moje projekty",
+    "secondaryCta": "Porozmawiajmy",
+    "backgroundImage": ""
+  },
+  "competencies": {
+    "enabled": true,
+    "eyebrow": "Kompetencje",
+    "title": "Techniczne wykonanie z projektową perspektywą",
+    "items": [
+      {
+        "number": "01",
+        "title": "QA i jakość",
+        "description": "Strategia testów, proces QA, ryzyko, dostępność i jakość od początku projektu."
+      },
+      {
+        "number": "02",
+        "title": "Project Management",
+        "description": "Planowanie, priorytety, komunikacja, discovery i prowadzenie zespołów do konkretnego rezultatu."
+      },
+      {
+        "number": "03",
+        "title": "Strony i narzędzia",
+        "description": "Szybkie, dostępne strony oraz lekkie narzędzia dopasowane do prawdziwej potrzeby biznesowej."
+      },
+      {
+        "number": "04",
+        "title": "AI w praktyce",
+        "description": "Rozsądne wykorzystanie AI do analizy, organizacji pracy, treści i automatyzacji."
+      }
+    ]
+  },
+  "projects": {
+    "enabled": true,
+    "eyebrow": "Wybrane realizacje",
+    "title": "Rzeczy, które już działają",
+    "description": "Projekty łączące dobry interfejs, przemyślaną architekturę i prostą obsługę."
+  },
+  "experience": {
+    "enabled": true,
+    "eyebrow": "Doświadczenie",
+    "title": "Ponad 10 lat blisko produktów cyfrowych",
+    "description": "Pracowałem przy projektach technologicznych — od branży gier, przez aplikacje webowe i mobilne, po duże platformy dla rozpoznawalnych marek. Pełniłem role QA Managera, Project Managera, Product Ownera i lidera zespołów.",
+    "tags": [
+      "QA Management",
+      "Project Management",
+      "Agile",
+      "Scrum",
+      "Kanban",
+      "Discovery",
+      "WCAG",
+      "Web",
+      "Mobile",
+      "AI",
+      "SEO / GEO"
+    ]
+  },
+  "cta": {
+    "enabled": true,
+    "title": "Masz pomysł, problem albo projekt do uporządkowania?",
+    "description": "Zacznijmy od krótkiej rozmowy. Bez korporacyjnego nadęcia, za to z konkretnym planem.",
+    "button": "Napisz do mnie"
+  }
+}

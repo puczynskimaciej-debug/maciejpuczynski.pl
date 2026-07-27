@@ -1,0 +1,41 @@
+{
+  "name": "Maciej Puczyński",
+  "brand": "MP",
+  "tagline": "Technologia. Jakość. Dowiezione projekty.",
+  "url": "https://maciejpuczynski.pl",
+  "locale": "pl_PL",
+  "contact": {
+    "email": "",
+    "location": "Polska / zdalnie",
+    "availability": "Porozmawiajmy o Twoim projekcie",
+    "intro": "Opowiedz krótko, co chcesz zbudować lub usprawnić. Wrócę z konkretną odpowiedzią.",
+    "consentEnabled": true,
+    "consentText": "Zgadzam się na wykorzystanie podanych danych wyłącznie w celu obsługi tej wiadomości."
+  },
+  "profiles": {
+    "github": "",
+    "linkedin": ""
+  },
+  "legal": "Wszystkie prawa zastrzeżone.",
+  "privacyUrl": "",
+  "seo": {
+    "home": {
+      "title": "Maciej Puczyński — QA, Project Management i rozwiązania webowe",
+      "description": "Łączę jakość, zarządzanie projektami i technologię. Tworzę strony, narzędzia i aplikacje oraz pomagam dowozić lepsze projekty IT.",
+      "ogImage": "/assets/images/brand/mp-logo.png",
+      "canonical": "https://maciejpuczynski.pl/"
+    },
+    "projects": {
+      "title": "Moje projekty — Maciej Puczyński",
+      "description": "Wybrane strony, narzędzia i produkty cyfrowe tworzone i rozwijane przez Macieja Puczyńskiego.",
+      "ogImage": "/assets/images/brand/mp-logo.png",
+      "canonical": "https://maciejpuczynski.pl/projekty/"
+    },
+    "contact": {
+      "title": "Kontakt — Maciej Puczyński",
+      "description": "Skontaktuj się w sprawie strony internetowej, narzędzia, aplikacji, jakości lub prowadzenia projektu.",
+      "ogImage": "/assets/images/brand/mp-logo.png",
+      "canonical": "https://maciejpuczynski.pl/kontakt/"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+pageKey: projects
+---
+<article class="project-detail">
+  <header class="project-detail__hero">
+    <div class="shell">
+      <a class="back-link" href="/projekty/">← Wszystkie projekty</a>
+      <div class="project-detail__heading">
+        <div>
+          <p class="eyebrow">{{ category }} · 0{{ order }}</p>
+          <h1>{{ title }}</h1>
+        </div>
+        <p>{{ summary }}</p>
+      </div>
+      <div class="project-detail__image">
+        <img src="{{ image }}" alt="{{ imageAlt }}" width="1440" height="900">
+        {% if inProgress %}<span class="status"><i></i> W trakcie realizacji</span>{% endif %}
+      </div>
+    </div>
+  </header>
+  <section class="section">
+    <div class="shell project-detail__content">
+      <div class="prose">{{ content | safe }}</div>
+      <aside>
+        {% if technologies.length %}<div><span>Technologie</span><ul>{% for technology in technologies %}<li>{{ technology }}</li>{% endfor %}</ul></div>{% endif %}
+        <div class="project-links">
+          {% if liveUrl %}<a class="button button--primary" href="{{ liveUrl }}" target="_blank" rel="noopener">Otwórz stronę ↗</a>{% endif %}
+          {% if repositoryUrl %}<a class="button button--ghost" href="{{ repositoryUrl }}" target="_blank" rel="noopener">Repozytorium ↗</a>{% endif %}
+        </div>
+      </aside>
+    </div>
+  </section>
+</article>

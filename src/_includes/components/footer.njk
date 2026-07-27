@@ -1,0 +1,31 @@
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true">MP</span>
+        <span class="brand-copy"><strong>{{ site.name }}</strong><small>{{ site.tagline }}</small></span>
+      </a>
+      <p>Tworzę i usprawniam produkty cyfrowe, które mają konkretny cel.</p>
+    </div>
+    <div>
+      <h2>Nawigacja</h2>
+      <a href="/">Strona główna</a>
+      <a href="/projekty/">Moje projekty</a>
+      <a href="/kontakt/">Kontakt</a>
+    </div>
+    <div>
+      <h2>Znajdź mnie</h2>
+      {% if site.profiles.github %}<a href="{{ site.profiles.github }}" target="_blank" rel="noopener">GitHub ↗</a>{% endif %}
+      {% if site.profiles.linkedin %}<a href="{{ site.profiles.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>{% endif %}
+      {% if site.contact.email %}<a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>{% endif %}
+      {% if not site.profiles.github and not site.profiles.linkedin and not site.contact.email %}<span>Dane edytowalne w CMS</span>{% endif %}
+    </div>
+  </div>
+  <div class="shell footer-bottom">
+    <span>© {% year %} {{ site.name }}. {{ site.legal }}</span>
+    <div>
+      {% if site.privacyUrl %}<a href="{{ site.privacyUrl }}">Polityka prywatności</a>{% endif %}
+      <a href="/admin/">Panel CMS</a>
+    </div>
+  </div>
+</footer>

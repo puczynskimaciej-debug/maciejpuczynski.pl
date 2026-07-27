@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>CMS | Maciej Puczyński</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/admin.css">
+  <script type="module" src="/admin/app.js"></script>
+</head>
+<body>
+  <section class="auth" id="auth-view">
+    <div class="auth-card"><div class="admin-logo">MP</div><p class="kicker">GitHub CMS</p><h1>Zarządzaj stroną</h1><p>Treści zapisują się jako commity na branchu skonfigurowanym dla portfolio.</p><button class="primary" id="login">Zaloguj przez GitHub</button><p class="message error" id="auth-error" hidden></p></div>
+  </section>
+  <section class="auth" id="loading-view" hidden><div class="auth-card"><span class="spinner"></span><h2>Łączę z GitHubem…</h2></div></section>
+  <div class="app" id="app-view" hidden>
+    <aside class="sidebar">
+      <a class="sidebar-brand" href="/"><span>MP</span><strong>Portfolio CMS</strong></a>
+      <nav>
+        <button class="active" data-view="dashboard">Podsumowanie</button>
+        <button data-view="home">Strona główna</button>
+        <button data-view="projects">Projekty</button>
+        <button data-view="contact">Kontakt i SEO</button>
+        <button data-view="media">Media</button>
+        <button data-view="history">Historia</button>
+      </nav>
+      <a href="/" target="_blank" rel="noopener">Otwórz stronę ↗</a>
+    </aside>
+    <main class="workspace">
+      <header class="topbar"><button class="menu" id="menu" aria-label="Otwórz menu">☰</button><div><strong id="user"></strong><small id="repo"></small></div><button class="ghost" id="logout">Wyloguj</button></header>
+      <p class="message" id="notice" hidden></p>
+      <section class="panel active" data-panel="dashboard">
+        <div class="heading"><div><p class="kicker">GitHub CMS</p><h1>Podsumowanie</h1></div></div>
+        <div class="stats"><article><span>Projekty</span><strong id="project-count">—</strong></article><article><span>Wyróżnione</span><strong id="featured-count">—</strong></article><article><span>Media</span><strong id="media-count">—</strong></article></div>
+        <div class="card intro"><div><h2>Każdy zapis tworzy commit</h2><p>Netlify automatycznie zbuduje nową wersję po zmianie treści.</p></div><button class="primary" data-action="new-project">Dodaj projekt</button></div>
+      </section>
+      <section class="panel" data-panel="home">
+        <div class="heading"><div><p class="kicker">Treści</p><h1>Strona główna</h1></div><button class="primary" form="home-form">Zapisz</button></div>
+        <form id="home-form">
+          <div class="card"><h2>Hero</h2><div class="form-grid">
+            <label class="toggle"><input name="hero.enabled" type="checkbox"> Sekcja aktywna</label>
+            <label>Nadtytuł<input name="hero.eyebrow" required></label><label class="wide">Tytuł<input name="hero.title" required></label><label class="wide">Podtytuł<input name="hero.subtitle"></label><label class="wide">Opis<textarea name="hero.description" rows="4" required></textarea></label><label>Przycisk projektów<input name="hero.primaryCta"></label><label>Przycisk kontaktu<input name="hero.secondaryCta"></label><label class="wide">Obraz lub tło<div class="inline-input"><input name="hero.backgroundImage"><button type="button" data-upload-for="hero.backgroundImage">Wgraj</button></div></label>
+          </div></div>
+          <div class="card"><h2>Widoczność sekcji</h2><div class="toggles"><label><input name="introEnabled" type="checkbox"> Splash MP</label><label><input name="competencies.enabled" type="checkbox"> Kompetencje</label><label><input name="projects.enabled" type="checkbox"> Projekty</label><label><input name="experience.enabled" type="checkbox"> Doświadczenie</label><label><input name="cta.enabled" type="checkbox"> CTA</label></div></div>
+          <div class="card"><h2>Teksty sekcji</h2><div class="form-grid"><label>Kompetencje — tytuł<input name="competencies.title"></label><label>Projekty — tytuł<input name="projects.title"></label><label class="wide">Projekty — opis<textarea name="projects.description"></textarea></label><label class="wide">Doświadczenie — tytuł<input name="experience.title"></label><label class="wide">Doświadczenie — opis<textarea name="experience.description"></textarea></label><label class="wide">CTA — tytuł<input name="cta.title"></label><label class="wide">CTA — opis<textarea name="cta.description"></textarea></label><label>CTA — przycisk<input name="cta.button"></label></div></div>
+        </form>
+      </section>
+      <section class="panel" data-panel="projects">
+        <div class="heading"><div><p class="kicker">Markdown</p><h1>Projekty</h1></div><button class="primary" data-action="new-project">+ Nowy projekt</button></div>
+        <div class="card table" id="projects-list"></div>
+      </section>
+      <section class="panel" data-panel="contact">
+        <div class="heading"><div><p class="kicker">Dane i metadane</p><h1>Kontakt i SEO</h1></div><button class="primary" form="site-form">Zapisz</button></div>
+        <form id="site-form">
+          <div class="card"><h2>Kontakt</h2><div class="form-grid"><label>E-mail<input name="contact.email" type="email"></label><label>Lokalizacja / tryb pracy<input name="contact.location"></label><label class="wide">Nagłówek<input name="contact.availability"></label><label class="wide">Wprowadzenie<textarea name="contact.intro"></textarea></label><label class="toggle wide"><input name="contact.consentEnabled" type="checkbox"> Wymagaj zgody</label><label class="wide">Treść zgody<textarea name="contact.consentText"></textarea></label><label>GitHub<input name="profiles.github" type="url"></label><label>LinkedIn<input name="profiles.linkedin" type="url"></label></div></div>
+          <div class="card"><h2>SEO trzech stron</h2><div id="seo-fields"></div></div>
+        </form>
+      </section>
+      <section class="panel" data-panel="media">
+        <div class="heading"><div><p class="kicker">Repozytorium</p><h1>Biblioteka mediów</h1></div><button class="primary" data-action="upload">+ Wgraj obraz</button></div><div class="media-grid" id="media-grid"></div>
+      </section>
+      <section class="panel" data-panel="history">
+        <div class="heading"><div><p class="kicker">GitHub</p><h1>Historia zmian</h1></div><button data-action="history">Odśwież</button></div><div class="card table" id="history-list"></div>
+      </section>
+    </main>
+  </div>
+  <dialog id="project-dialog">
+    <form id="project-form">
+      <div class="dialog-head"><div><p class="kicker">Projekt</p><h2 id="project-title">Nowy projekt</h2></div><button type="button" data-close aria-label="Zamknij">×</button></div>
+      <div class="form-grid"><label>Tytuł<input name="title" required></label><label>Kategoria<input name="category" required></label><label class="wide">Krótki opis<textarea name="summary" required></textarea></label><label class="wide">Pełny opis (Markdown)<textarea name="body" rows="8"></textarea></label><label>Technologie, po przecinku<input name="technologies"></label><label>Kolejność<input name="order" type="number" min="1" required></label><label class="wide">Obraz<div class="inline-input"><input name="image" required><button type="button" data-upload-for="project.image">Wgraj</button></div></label><label class="wide">Tekst alternatywny<input name="imageAlt" required></label><label>Link do strony<input name="liveUrl" type="url"></label><label>Link do repozytorium<input name="repositoryUrl" type="url"></label></div>
+      <div class="toggles"><label><input name="inProgress" type="checkbox"> W trakcie</label><label><input name="featured" type="checkbox"> Wyróżniony</label><label><input name="published" type="checkbox" checked> Opublikowany</label></div>
+      <div class="dialog-actions"><button type="button" data-close>Anuluj</button><button class="primary" type="submit">Zapisz projekt</button></div>
+    </form>
+  </dialog>
+  <input id="file-input" type="file" accept="image/jpeg,image/png,image/webp,image/avif,image/gif,image/svg+xml" hidden>
+</body>
+</html>

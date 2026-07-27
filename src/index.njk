@@ -1,0 +1,94 @@
+---
+layout: layouts/base.njk
+pageKey: home
+permalink: /index.html
+---
+{% if home.hero.enabled %}
+<section class="hero">
+  <div class="hero-glow hero-glow--one" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow--two" aria-hidden="true"></div>
+  <div class="shell hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow reveal">{{ home.hero.eyebrow }}</p>
+      <h1 class="reveal">{{ home.hero.title }}</h1>
+      <p class="hero-subtitle reveal">{{ home.hero.subtitle }}</p>
+      <p class="hero-description reveal">{{ home.hero.description }}</p>
+      <div class="hero-actions reveal">
+        <a class="button button--primary" href="/projekty/">{{ home.hero.primaryCta }} <span aria-hidden="true">↗</span></a>
+        <a class="button button--ghost" href="/kontakt/">{{ home.hero.secondaryCta }}</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal" data-pointer-glow>
+      <div class="visual-grid" aria-hidden="true"></div>
+      <div class="hero-monogram">MP</div>
+      <div class="orbit orbit--one"><span>QA</span></div>
+      <div class="orbit orbit--two"><span>PM</span></div>
+      <div class="orbit orbit--three"><span>WEB</span></div>
+      <p><span></span> Dostępny do ciekawych projektów</p>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#kompetencje"><span>Przewiń</span><i></i></a>
+</section>
+{% endif %}
+
+{% if home.competencies.enabled %}
+<section class="section competencies" id="kompetencje">
+  <div class="shell">
+    <div class="section-heading reveal">
+      <div><p class="eyebrow">{{ home.competencies.eyebrow }}</p><h2>{{ home.competencies.title }}</h2></div>
+      <p>Patrzę na projekt szerzej: przez jakość wykonania, komunikację, ryzyko, użyteczność i cel biznesowy.</p>
+    </div>
+    <div class="competency-grid">
+      {% for item in home.competencies.items %}
+      <article class="competency-card reveal">
+        <span>{{ item.number }}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if home.projects.enabled %}
+<section class="section section--dark featured-projects">
+  <div class="shell">
+    <div class="section-heading reveal">
+      <div><p class="eyebrow">{{ home.projects.eyebrow }}</p><h2>{{ home.projects.title }}</h2></div>
+      <div><p>{{ home.projects.description }}</p><a class="arrow-link" href="/projekty/">Wszystkie projekty <span aria-hidden="true">→</span></a></div>
+    </div>
+    {% set featuredProjects = collections.projects | featured %}
+    {% if featuredProjects.length %}
+    <div class="project-grid">
+      {% for project in featuredProjects | limit(3) %}{% include "components/project-card.njk" %}{% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state"><span>MP</span><h3>Projekty pojawią się tutaj wkrótce.</h3><p>Dodaj pierwszy wyróżniony projekt w panelu CMS.</p></div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% if home.experience.enabled %}
+<section class="section experience">
+  <div class="shell experience-grid">
+    <div class="experience-number reveal"><strong>10<sup>+</sup></strong><span>lat doświadczenia<br>w projektach IT</span></div>
+    <div class="experience-copy reveal">
+      <p class="eyebrow">{{ home.experience.eyebrow }}</p>
+      <h2>{{ home.experience.title }}</h2>
+      <p>{{ home.experience.description }}</p>
+      <div class="tag-cloud">{% for tag in home.experience.tags %}<span>{{ tag }}</span>{% endfor %}</div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if home.cta.enabled %}
+<section class="section cta">
+  <div class="shell cta-panel reveal">
+    <div><p class="eyebrow">Następny krok</p><h2>{{ home.cta.title }}</h2><p>{{ home.cta.description }}</p></div>
+    <a class="button button--light" href="/kontakt/">{{ home.cta.button }} <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+{% endif %}

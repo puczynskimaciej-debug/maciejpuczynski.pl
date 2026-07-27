@@ -1,0 +1,20 @@
+<article class="project-card reveal" data-tilt>
+  <a class="project-card__media" href="{{ project.url }}" aria-label="Zobacz projekt {{ project.data.title }}">
+    <img src="{{ project.data.image }}" alt="{{ project.data.imageAlt }}" loading="lazy" width="960" height="640">
+    {% if project.data.inProgress %}<span class="status"><i></i> W trakcie</span>{% endif %}
+  </a>
+  <div class="project-card__body">
+    <div class="project-card__meta">
+      <span>{{ project.data.category }}</span>
+      <span>0{{ project.data.order }}</span>
+    </div>
+    <h3><a href="{{ project.url }}">{{ project.data.title }}</a></h3>
+    <p>{{ project.data.summary }}</p>
+    {% if project.data.technologies.length %}
+    <ul class="tech-list" aria-label="Technologie">
+      {% for technology in project.data.technologies %}<li>{{ technology }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    <a class="arrow-link" href="{{ project.url }}">Zobacz szczegóły <span aria-hidden="true">↗</span></a>
+  </div>
+</article>

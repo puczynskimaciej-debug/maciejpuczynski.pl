@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07131f">
+  {% include "components/seo.njk" %}
+  <link rel="icon" type="image/png" href="/assets/images/brand/mp-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="/assets/js/site.js" defer></script>
+</head>
+<body data-page="{{ pageKey }}">
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+  {% if pageKey == "home" and home.introEnabled %}
+  <div class="splash" data-splash aria-hidden="true">
+    <div class="splash-orbit"></div>
+    <div class="splash-logo"><span>MP</span><small>MANAGE PROJECTS</small></div>
+    <p>Jakość. Projekty. Technologia.</p>
+    <button type="button" data-splash-skip>Pomiń</button>
+  </div>
+  {% endif %}
+  {% include "components/header.njk" %}
+  <main id="main">{{ content | safe }}</main>
+  {% include "components/footer.njk" %}
+</body>
+</html>
