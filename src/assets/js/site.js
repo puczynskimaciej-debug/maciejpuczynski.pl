@@ -33,6 +33,8 @@ if (splash) {
     splash.classList.add("is-hidden");
     splash.setAttribute("aria-hidden", "true");
     sessionStorage.setItem("mp_intro_seen", "true");
+    document.documentElement.classList.remove("intro-active");
+    document.documentElement.classList.add("intro-seen");
     setTimeout(() => splash.remove(), 500);
   };
   if (seen || reducedMotion) hideSplash();

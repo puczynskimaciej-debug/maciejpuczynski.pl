@@ -1,3 +1,3 @@
 try {
-  if (sessionStorage.getItem("mp_intro_seen")) document.documentElement.classList.add("intro-seen");
+  document.documentElement.classList.add(sessionStorage.getItem("mp_intro_seen") ? "intro-seen" : "intro-active");
 } catch {}

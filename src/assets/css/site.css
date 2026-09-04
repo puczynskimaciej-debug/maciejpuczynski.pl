@@ -271,7 +271,8 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 .footer-bottom div { display: flex; gap: 20px; }
 .footer-bottom a { text-decoration: none; }
 
-.splash { position: fixed; inset: 0; z-index: 999; display: grid; place-items: center; align-content: center; overflow: hidden; background: var(--ink); color: white; opacity: 1; visibility: visible; transition: opacity .45s, visibility .45s; }
+.splash { position: fixed; inset: 0; z-index: 999; display: none; place-items: center; align-content: center; overflow: hidden; background: var(--ink); color: white; opacity: 1; visibility: visible; transition: opacity .45s, visibility .45s; }
+.intro-active .splash { display: grid; }
 .intro-seen .splash { display: none; }
 .splash.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 .splash-logo { position: relative; z-index: 2; display: grid; place-items: center; }

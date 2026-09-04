@@ -2,7 +2,7 @@ import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 
-const root = path.resolve("_site");
+const root = path.resolve(process.env.TEST_ROOT || "_site");
 const port = Number(process.env.TEST_PORT || 8123);
 const types = { ".html":"text/html; charset=utf-8", ".css":"text/css", ".js":"text/javascript", ".svg":"image/svg+xml", ".png":"image/png" };
 createServer(async (request, response) => {
