@@ -43,9 +43,9 @@ await sessionPage.evaluate(() => sessionStorage.setItem("mp_intro_seen", "true")
 await sessionPage.locator(".brand").first().click();
 const introState = await sessionPage.evaluate(() => ({
   markedBeforePaint: document.documentElement.classList.contains("intro-seen"),
-  splashDisplay: getComputedStyle(document.querySelector("[data-splash]")).display
+  splashDisplay: document.querySelector("[data-splash]") ? getComputedStyle(document.querySelector("[data-splash]")).display : "removed"
 }));
-if (!introState.markedBeforePaint || introState.splashDisplay !== "none") failures.push(`intro miga przy powrocie na stronę główną w tej samej sesji: ${JSON.stringify(introState)}`);
+if (!introState.markedBeforePaint || !["none", "removed"].includes(introState.splashDisplay)) failures.push(`intro miga przy powrocie na stronę główną w tej samej sesji: ${JSON.stringify(introState)}`);
 await sessionContext.close();
 await browser.close();
 console.log(JSON.stringify({ viewports: viewports.length, pages: pages.length, failures }, null, 2));
