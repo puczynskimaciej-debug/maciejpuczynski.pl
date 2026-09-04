@@ -10,7 +10,7 @@ image: "/assets/images/projects/maciejpuczynski.svg"
 imageAlt: "Abstrakcyjny podgląd strony maciejpuczynski.pl"
 liveUrl: "https://maciejpuczynski.pl"
 repositoryUrl: ""
-inProgress: true
+inProgress: false
 featured: true
 order: 1
 published: true

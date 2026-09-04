@@ -13,7 +13,7 @@ module.exports = function (eleventyConfig) {
   );
   eleventyConfig.addFilter("featured", (items) =>
     [...(items || [])]
-      .filter((item) => item.data.featured && item.data.published !== false)
+      .filter((item) => item.data.featured && item.data.published !== false && !item.data.inProgress)
       .sort((a, b) => Number(a.data.order || 999) - Number(b.data.order || 999))
   );
   eleventyConfig.addFilter("limit", (items, amount) => (items || []).slice(0, amount));

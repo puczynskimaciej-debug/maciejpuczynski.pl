@@ -13,19 +13,9 @@
       <a href="/projekty/">Moje projekty</a>
       <a href="/kontakt/">Kontakt</a>
     </div>
-    <div>
-      <h2>Znajdź mnie</h2>
-      {% if site.profiles.github %}<a href="{{ site.profiles.github }}" target="_blank" rel="noopener">GitHub ↗</a>{% endif %}
-      {% if site.profiles.linkedin %}<a href="{{ site.profiles.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>{% endif %}
-      {% if site.contact.email %}<a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>{% endif %}
-      {% if not site.profiles.github and not site.profiles.linkedin and not site.contact.email %}<span>Dane edytowalne w CMS</span>{% endif %}
-    </div>
   </div>
   <div class="shell footer-bottom">
     <span>© {% year %} {{ site.name }}. {{ site.legal }}</span>
-    <div>
-      {% if site.privacyUrl %}<a href="{{ site.privacyUrl }}">Polityka prywatności</a>{% endif %}
-      <a href="/admin/">Panel CMS</a>
-    </div>
+    {% if site.privacyUrl %}<a href="{{ site.privacyUrl }}">Polityka prywatności</a>{% endif %}
   </div>
 </footer>

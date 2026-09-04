@@ -16,8 +16,28 @@ permalink: /projekty/index.html
   </div>
 </header>
 
+<section class="experience-ribbon" aria-labelledby="experience-ribbon-title">
+  <div class="shell experience-ribbon__intro reveal">
+    <p class="eyebrow">Doświadczenie projektowe</p>
+    <h2 id="experience-ribbon-title">Pracowałem przy projektach realizowanych dla rozpoznawalnych marek.</h2>
+    <p>Jako część firm i zespołów odpowiedzialnych za jakość, prowadzenie oraz rozwój produktów cyfrowych.</p>
+  </div>
+  <div class="brand-marquee" aria-label="Wybrane marki i obszary doświadczenia">
+    <div class="brand-marquee__track">
+      {% for repetition in [1, 2] %}
+      <span>Mazda</span><span>TUI</span><span>Kyocera</span><span>PZPN</span><span>Ubisoft</span><span>Riot Games</span><span>Capcom</span><span>CD Projekt RED</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 <section class="section projects-list">
   <div class="shell">
+    <div class="projects-offer-heading reveal">
+      <p class="eyebrow">Co możemy stworzyć</p>
+      <h2>Przykładowe projekty, które mogę dziś wykonać dla Ciebie.</h2>
+      <p>Od szybkiej strony usługowej po serwis z własnym panelem publikacji. Poniższe przykłady pokazują możliwe kierunki — zakres i charakter rozwiązania zawsze dopasujemy do rzeczywistej potrzeby.</p>
+    </div>
     {% if collections.projects.length %}
     <div class="project-toolbar reveal">
       <p><strong>{{ collections.projects.length }}</strong> {% if collections.projects.length == 1 %}projekt{% else %}projekty{% endif %}</p>

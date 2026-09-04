@@ -27,7 +27,7 @@ for (const page of pages) {
     }
   } catch { failures.push(`${page}: plik nie istnieje`); }
 }
-for (const asset of ["assets/css/site.css", "assets/js/site.js", "assets/images/brand/mp-logo.png", "admin/app.js"]) {
+for (const asset of ["assets/css/site.css", "assets/js/site.js", "assets/js/intro-state.js", "assets/images/brand/mp-logo.png", "assets/images/projects/curtain-violet.svg", "assets/images/projects/curtain-coral.svg", "admin/app.js"]) {
   try { await access(path.join(output, asset)); } catch { failures.push(`brak zasobu: ${asset}`); }
 }
 const generated = await readdir(path.join(output, "projekty"));
