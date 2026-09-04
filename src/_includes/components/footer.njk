@@ -5,17 +5,17 @@
         <span class="brand-mark" aria-hidden="true">MP</span>
         <span class="brand-copy"><strong>{{ site.name }}</strong><small>{{ site.tagline }}</small></span>
       </a>
-      <p>Tworzę i usprawniam produkty cyfrowe, które mają konkretny cel.</p>
+      <p>{% if lang == "en" %}I build and improve digital products with a clear purpose.{% else %}Tworzę i usprawniam produkty cyfrowe, które mają konkretny cel.{% endif %}</p>
     </div>
     <div>
-      <h2>Nawigacja</h2>
-      <a href="/">Strona główna</a>
-      <a href="/projekty/">Moje projekty</a>
-      <a href="/kontakt/">Kontakt</a>
+      <h2>{% if lang == "en" %}Navigation{% else %}Nawigacja{% endif %}</h2>
+      <a href="{% if lang == 'en' %}/en/{% else %}/{% endif %}">{% if lang == "en" %}Home{% else %}Strona główna{% endif %}</a>
+      <a href="{% if lang == 'en' %}/en/projects/{% else %}/projekty/{% endif %}">{% if lang == "en" %}My projects{% else %}Moje projekty{% endif %}</a>
+      <a href="{% if lang == 'en' %}/en/contact/{% else %}/kontakt/{% endif %}">{% if lang == "en" %}Contact{% else %}Kontakt{% endif %}</a>
     </div>
   </div>
   <div class="shell footer-bottom">
-    <span>© {% year %} {{ site.name }}. {{ site.legal }}</span>
+    <span>© {% year %} {{ site.name }}. {% if lang == "en" %}All rights reserved.{% else %}{{ site.legal }}{% endif %}</span>
     {% if site.privacyUrl %}<a href="{{ site.privacyUrl }}">Polityka prywatności</a>{% endif %}
   </div>
 </footer>

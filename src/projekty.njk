@@ -2,6 +2,7 @@
 layout: layouts/base.njk
 pageKey: projects
 permalink: /projekty/index.html
+alternateUrl: /en/projects/
 ---
 <header class="page-hero">
   <div class="shell page-hero__grid">
@@ -22,12 +23,9 @@ permalink: /projekty/index.html
     <h2 id="experience-ribbon-title">Pracowałem przy projektach realizowanych dla rozpoznawalnych marek.</h2>
     <p>Jako część firm i zespołów odpowiedzialnych za jakość, prowadzenie oraz rozwój produktów cyfrowych.</p>
   </div>
-  <div class="brand-marquee" aria-label="Wybrane marki i obszary doświadczenia">
-    <div class="brand-marquee__track">
-      {% for repetition in [1, 2] %}
-      <span>Mazda</span><span>TUI</span><span>Kyocera</span><span>PZPN</span><span>Ubisoft</span><span>Riot Games</span><span>Capcom</span><span>CD Projekt RED</span>
-      {% endfor %}
-    </div>
+  <div class="brand-constellation" aria-label="Wybrane marki i obszary doświadczenia">
+    <div class="brand-constellation__core">10+<small>lat</small></div>
+    <span>Mazda</span><span>TUI</span><span>Kyocera</span><span>PZPN</span><span>Ubisoft</span><span>Riot Games</span><span>Capcom</span><span>CD Projekt RED</span>
   </div>
 </section>
 

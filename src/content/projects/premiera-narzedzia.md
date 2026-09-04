@@ -1,9 +1,14 @@
 ---
 layout: "layouts/project.njk"
 permalink: "/projekty/premiera-narzedzia/index.html"
+alternateUrl: "/en/projects/premiera-narzedzia/"
 title: "Nowe narzędzie cyfrowe"
 slug: "premiera-narzedzia"
 summary: "Kolejna realizacja jest w przygotowaniu. Szczegóły, możliwości i kulisy projektu pojawią się wkrótce."
+titleEn: "A new digital tool"
+summaryEn: "Another delivery is in progress. Its features, capabilities and behind-the-scenes story will appear soon."
+categoryEn: "Coming soon"
+bodyEn: "Another project is taking shape behind this curtain. After launch, this page will include a complete overview of its purpose, key features and design decisions."
 category: "Nadchodzi"
 technologies: []
 image: "/assets/images/projects/curtain-coral.svg"

@@ -1,0 +1,13 @@
+---
+pagination:
+  data: collections.projects
+  size: 1
+  alias: project
+permalink: "/en/projects/{{ project.data.slug }}/index.html"
+layout: layouts/base.njk
+lang: en
+pageKey: projects
+eleventyComputed:
+  alternateUrl: "/projekty/{{ project.data.slug }}/"
+---
+<article class="project-detail"><header class="project-detail__hero"><div class="shell"><a class="back-link" href="/en/projects/">← All projects</a><div class="project-detail__heading"><div><p class="eyebrow">{{ project.data.categoryEn }} · 0{{ project.data.order }}</p><h1>{{ project.data.titleEn }}</h1></div><p>{{ project.data.summaryEn }}</p></div><div class="project-detail__image"><img src="{{ project.data.image }}" alt="{{ project.data.imageAlt }}" width="1440" height="900">{% if project.data.inProgress %}<span class="status"><i></i> In progress</span>{% endif %}</div></div></header><section class="section"><div class="shell project-detail__content"><div class="prose">{{ project.data.bodyEn | renderMarkdown | safe }}</div><aside>{% if project.data.technologies.length %}<div><span>Technologies</span><ul>{% for technology in project.data.technologies %}<li>{{ technology }}</li>{% endfor %}</ul></div>{% endif %}<div class="project-links">{% if project.data.liveUrl %}<a class="button button--primary" href="{{ project.data.liveUrl }}" target="_blank" rel="noopener">Open website ↗</a>{% endif %}{% if project.data.repositoryUrl %}<a class="button button--ghost" href="{{ project.data.repositoryUrl }}" target="_blank" rel="noopener">Repository ↗</a>{% endif %}</div></aside></div></section></article>

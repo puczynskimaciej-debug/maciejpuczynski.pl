@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+lang: en
+pageKey: home
+permalink: /en/index.html
+alternateUrl: /
+---
+<section class="hero">
+  <div class="hero-glow hero-glow--one" aria-hidden="true"></div><div class="hero-glow hero-glow--two" aria-hidden="true"></div>
+  <div class="shell hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow reveal">QA • Project Management • Web • AI</p>
+      <h1 class="reveal">I help teams deliver better IT projects.</h1>
+      <p class="hero-subtitle reveal">I connect quality, management and technology.</p>
+      <p class="hero-description reveal">I work where teams, clients and real business goals meet. I improve processes, protect product quality and create websites, tools and applications.</p>
+      <div class="hero-actions reveal"><a class="button button--primary" href="/en/projects/">See my projects <span aria-hidden="true">↗</span></a><a class="button button--ghost" href="/en/contact/">Let's talk</a></div>
+    </div>
+    <div class="hero-visual reveal" data-pointer-glow><div class="visual-grid" aria-hidden="true"></div><div class="hero-monogram"><span>MP</span></div><div class="orbit orbit--one"><span>QA</span><span>AI</span></div><div class="orbit orbit--two"><span>PM</span><span>Business</span></div><div class="orbit orbit--three"><span>Web</span><span>Analytics</span></div><p><span></span> Open to interesting projects</p></div>
+  </div>
+</section>
+<section class="section competencies" id="expertise"><div class="shell">
+  <div class="section-heading reveal"><div><p class="eyebrow">Expertise</p><h2>Technical execution with a project-wide perspective</h2></div><p>I look beyond implementation: quality, communication, risk, usability and business value all matter.</p></div>
+  <div class="competency-grid">
+    {% set skills = [{number:"01",icon:"✓",title:"QA and quality",description:"Test strategy, QA processes, risk, accessibility and quality built in from day one."},{number:"02",icon:"↗",title:"Project Management",description:"Planning, priorities, communication, discovery and guiding teams towards concrete outcomes."},{number:"03",icon:"</>",title:"Websites and tools",description:"Fast, accessible websites and lightweight tools designed around a real business need."},{number:"04",icon:"✦",title:"Practical AI",description:"Sensible use of AI for analysis, organisation, content and automation."}] %}
+    {% for item in skills %}<article class="competency-card competency-card--{{ loop.index }} reveal"><span>{{ item.number }}</span><i class="competency-icon" aria-hidden="true">{{ item.icon }}</i><h3>{{ item.title }}</h3><p>{{ item.description }}</p></article>{% endfor %}
+  </div>
+</div></section>
+<section class="section section--dark featured-projects"><div class="shell">
+  <div class="section-heading reveal"><div><p class="eyebrow">Selected work</p><h2>Things that already work</h2></div><div><p>Projects combining a good interface, thoughtful architecture and straightforward operation.</p><a class="arrow-link" href="/en/projects/">All projects <span aria-hidden="true">→</span></a></div></div>
+  {% set featuredProjects = collections.projects | featured %}<div class="project-grid">{% for project in featuredProjects | limit(4) %}{% include "components/project-card.njk" %}{% endfor %}</div>
+</div></section>
+<section class="section experience"><div class="shell experience-grid"><div class="experience-number reveal"><strong>10<sup>+</sup></strong><span>years of experience<br>in IT projects</span></div><div class="experience-copy reveal"><p class="eyebrow">Experience</p><h2>Over 10 years close to digital products</h2><p>I have worked on technology projects ranging from games and mobile applications to large platforms for recognised brands. My roles have included QA Manager, Project Manager, Product Owner and team lead.</p><div class="tag-cloud"><span>QA Management</span><span>Project Management</span><span>Agile</span><span>Scrum</span><span>Discovery</span><span>WCAG</span><span>Web</span><span>Mobile</span><span>AI</span></div></div></div></section>
+<section class="section cta"><div class="shell cta-panel reveal"><div><p class="eyebrow">Next step</p><h2>Have an idea, a problem or a project that needs structure?</h2><p>Let's begin with a short conversation — no corporate theatre, just a concrete plan.</p></div><a class="button button--light" href="/en/contact/">Get in touch <span aria-hidden="true">↗</span></a></div></section>

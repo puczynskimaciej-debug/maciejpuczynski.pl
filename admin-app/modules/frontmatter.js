@@ -1,4 +1,4 @@
-const ORDER = ["layout", "permalink", "title", "slug", "summary", "category", "technologies", "image", "imageAlt", "liveUrl", "repositoryUrl", "inProgress", "featured", "order", "published"];
+const ORDER = ["layout", "permalink", "alternateUrl", "title", "slug", "summary", "category", "titleEn", "summaryEn", "categoryEn", "bodyEn", "technologies", "image", "imageAlt", "liveUrl", "repositoryUrl", "inProgress", "featured", "order", "published"];
 
 export function parseMarkdown(source) {
   const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);

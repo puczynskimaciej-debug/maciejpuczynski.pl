@@ -77,7 +77,7 @@ function openProject(project = null) {
   state.editing = project; const form = $("#project-form"); form.reset();
   $("#project-title").textContent = project ? "Edytuj projekt" : "Nowy projekt";
   if (project) {
-    for (const name of ["title","category","summary","body","order","image","imageAlt","liveUrl","repositoryUrl"]) form.elements[name].value = project[name] ?? "";
+    for (const name of ["title","category","summary","body","titleEn","categoryEn","summaryEn","bodyEn","order","image","imageAlt","liveUrl","repositoryUrl"]) form.elements[name].value = project[name] ?? "";
     form.elements.technologies.value = (project.technologies || []).join(", ");
     for (const name of ["inProgress","featured","published"]) form.elements[name].checked = Boolean(project[name]);
   } else { form.elements.order.value = state.projects.length + 1; form.elements.published.checked = true; }
@@ -123,6 +123,7 @@ $("#project-form").addEventListener("submit", (event) => {
     const form = event.target; const project = {
       title: form.title.value.trim(), slug: state.editing?.originalSlug || slugify(form.title.value),
       category: form.category.value.trim(), summary: form.summary.value.trim(), body: form.body.value.trim(),
+      titleEn: form.titleEn.value.trim(), categoryEn: form.categoryEn.value.trim(), summaryEn: form.summaryEn.value.trim(), bodyEn: form.bodyEn.value.trim(),
       technologies: form.technologies.value.split(",").map((item) => item.trim()).filter(Boolean),
       order: Number(form.order.value), image: form.image.value.trim(), imageAlt: form.imageAlt.value.trim(),
       liveUrl: form.liveUrl.value.trim(), repositoryUrl: form.repositoryUrl.value.trim(),

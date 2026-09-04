@@ -8,10 +8,14 @@
       <span class="sr-only">Otwórz menu</span>
       <i></i><i></i>
     </button>
-    <nav class="main-nav" id="main-nav" aria-label="Główna nawigacja">
-      <a href="/" {% if pageKey == "home" %}aria-current="page"{% endif %}>Strona główna</a>
-      <a href="/projekty/" {% if pageKey == "projects" %}aria-current="page"{% endif %}>Moje projekty</a>
-      <a class="nav-contact" href="/kontakt/" {% if pageKey == "contact" %}aria-current="page"{% endif %}>Kontakt <span aria-hidden="true">↗</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="{% if lang == 'en' %}Main navigation{% else %}Główna nawigacja{% endif %}">
+      <a href="{% if lang == 'en' %}/en/{% else %}/{% endif %}" {% if pageKey == "home" %}aria-current="page"{% endif %}>{% if lang == "en" %}Home{% else %}Strona główna{% endif %}</a>
+      <a href="{% if lang == 'en' %}/en/projects/{% else %}/projekty/{% endif %}" {% if pageKey == "projects" %}aria-current="page"{% endif %}>{% if lang == "en" %}My projects{% else %}Moje projekty{% endif %}</a>
+      <a class="nav-contact" href="{% if lang == 'en' %}/en/contact/{% else %}/kontakt/{% endif %}" {% if pageKey == "contact" %}aria-current="page"{% endif %}>{% if lang == "en" %}Contact{% else %}Kontakt{% endif %} <span aria-hidden="true">↗</span></a>
+      <a class="language-switch" href="{{ alternateUrl }}" hreflang="{% if lang == 'en' %}pl{% else %}en{% endif %}" aria-label="{% if lang == 'en' %}Przełącz na język polski{% else %}Switch to English{% endif %}">
+        <img src="/assets/images/flags/{% if lang == 'en' %}pl{% else %}gb{% endif %}.svg" alt="" width="20" height="14">
+        <span>{% if lang == "en" %}PL{% else %}EN{% endif %}</span>
+      </a>
     </nav>
   </div>
 </header>

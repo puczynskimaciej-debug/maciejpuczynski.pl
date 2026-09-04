@@ -74,6 +74,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .main-nav a:hover, .main-nav a[aria-current="page"] { color: white; background: rgba(255,255,255,.09); }
 .main-nav .nav-contact { margin-left: 8px; border: 1px solid rgba(255,255,255,.24); color: white; }
 .nav-contact span { color: var(--cyan); }
+.main-nav .language-switch { display:flex; align-items:center; gap:7px; margin-left:4px; padding-inline:11px; border:1px solid rgba(255,255,255,.18); color:white; }
+.language-switch img { width:20px; height:14px; border-radius:2px; object-fit:cover; box-shadow:0 0 0 1px rgba(255,255,255,.2); }
+.language-switch span { font-size:11px; letter-spacing:.08em; }
 .nav-toggle { display: none; width: 46px; height: 46px; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; background: transparent; color: white; }
 .nav-toggle i { display: block; width: 18px; height: 1px; margin: 5px auto; background: currentColor; transition: .25s; }
 
@@ -200,9 +203,14 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 .experience-ribbon__intro .eyebrow { grid-column:1/-1; margin-bottom:-12px; }
 .experience-ribbon__intro h2 { margin:0; max-width:760px; font-size:clamp(32px,4.5vw,58px); line-height:1.06; letter-spacing:-.055em; }
 .experience-ribbon__intro > p:last-child { margin:0; max-width:520px; color:var(--muted); font-size:17px; }
-.brand-marquee { margin-top:55px; overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
-.brand-marquee__track { display:flex; width:max-content; gap:12px; animation:brandScroll 38s linear infinite; }
-.brand-marquee__track span { min-width:max-content; padding:13px 20px; border:1px solid rgba(7,19,31,.12); border-radius:999px; background:rgba(255,255,255,.72); color:var(--ink); font:700 13px "Manrope"; box-shadow:0 10px 25px rgba(7,19,31,.05); }
+.brand-constellation { position:relative; display:grid; grid-template-columns:repeat(8,max-content); justify-content:center; align-items:center; gap:14px; width:var(--shell); min-height:210px; margin:42px auto -10px; padding:55px 20px; isolation:isolate; }
+.brand-constellation::before,.brand-constellation::after { content:""; position:absolute; z-index:-1; left:50%; top:50%; border:1px solid rgba(0,174,188,.15); border-radius:50%; transform:translate(-50%,-50%); }
+.brand-constellation::before { width:min(760px,82vw); height:150px; }
+.brand-constellation::after { width:min(1020px,94vw); height:205px; border-color:rgba(117,89,217,.1); }
+.brand-constellation__core { position:absolute; left:50%; top:50%; display:grid; place-items:center; width:82px; height:82px; border-radius:50%; background:var(--ink); color:var(--cyan); font:800 25px/1 "Manrope"; box-shadow:0 18px 45px rgba(7,19,31,.24),0 0 0 10px rgba(32,217,232,.08); transform:translate(-50%,-50%); }
+.brand-constellation__core small { color:rgba(255,255,255,.6); font-size:9px; letter-spacing:.12em; text-transform:uppercase; }
+.brand-constellation > span { --float-x:8px; --float-y:-10px; position:relative; min-width:max-content; padding:12px 18px; border:1px solid rgba(7,19,31,.12); border-radius:999px; background:rgba(255,255,255,.82); color:var(--ink); font:700 13px "Manrope"; box-shadow:0 12px 30px rgba(7,19,31,.08); animation:brandFloat 5.8s ease-in-out infinite alternate,brandPulse 9s ease-in-out infinite; }
+.brand-constellation > span:nth-of-type(2n){--float-x:-7px;--float-y:12px;animation-delay:-1.4s,-4s}.brand-constellation > span:nth-of-type(3n){--float-x:4px;--float-y:8px;animation-duration:7.2s,11s}.brand-constellation > span:nth-of-type(4n){--float-x:-10px;--float-y:-7px;animation-delay:-3s,-7s}.brand-constellation > span:nth-of-type(4),.brand-constellation > span:nth-of-type(5){margin-inline:55px}
 .projects-offer-heading { display:grid; grid-template-columns:1.15fr .7fr; gap:20px 7vw; align-items:end; margin-bottom:65px; }
 .projects-offer-heading .eyebrow { grid-column:1/-1; margin-bottom:-6px; }
 .projects-offer-heading h2 { margin:0; max-width:800px; font-size:clamp(37px,5vw,64px); line-height:1.04; letter-spacing:-.06em; }
@@ -288,7 +296,8 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 @keyframes scrollCue { 0% { transform: translateY(-100%); } 50%,100% { transform: translateY(100%); } }
 @keyframes splashIn { from { opacity:0; transform: scale(.8); } }
 @keyframes splashOrbit { from { opacity:0; transform: scale(.3); } to { opacity:1; transform: scale(1); } }
-@keyframes brandScroll { to { transform:translateX(-50%); } }
+@keyframes brandFloat { to { transform:translate(var(--float-x),var(--float-y)) rotate(.7deg); } }
+@keyframes brandPulse { 0%,72%,100%{border-color:rgba(7,19,31,.12);box-shadow:0 12px 30px rgba(7,19,31,.08)} 82%{border-color:rgba(0,174,188,.5);box-shadow:0 14px 35px rgba(0,174,188,.2),0 0 0 5px rgba(32,217,232,.07)} }
 
 @media (max-width: 1000px) {
   .hero-grid { grid-template-columns: 1fr; padding-top: 140px; }
@@ -309,6 +318,7 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
   .main-nav.is-open { opacity: 1; visibility: visible; transform: none; }
   .main-nav a { padding: 15px; }
   .main-nav .nav-contact { margin: 5px 0 0; }
+  .main-nav .language-switch { margin:5px 0 0; justify-content:center; }
   .hero { min-height: auto; }
   .hero-grid { gap: 55px; padding: 88px 0 80px; }
   .hero h1 { font-size: clamp(45px,14.5vw,68px); }
@@ -332,6 +342,10 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
   .experience-ribbon__intro .eyebrow, .projects-offer-heading .eyebrow { grid-column:auto; margin-bottom:0; }
   .projects-hero-visual { min-height:115px; }
   .projects-hero-visual span { border-radius:14px; font-size:12px; }
+  .brand-constellation { grid-template-columns:repeat(2,max-content); gap:12px 42px; min-height:390px; padding-block:85px; }
+  .brand-constellation::before { width:300px; height:300px; }
+  .brand-constellation::after { width:390px; height:390px; }
+  .brand-constellation > span:nth-of-type(4),.brand-constellation > span:nth-of-type(5){margin-inline:0}
   .page-hero h1 { font-size: clamp(48px,15vw,70px); }
   .project-toolbar { display: grid; }
   .filter-list { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 7px; }
@@ -352,5 +366,5 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
-  .brand-marquee__track { animation:none; flex-wrap:wrap; width:auto; justify-content:center; }
+  .brand-constellation > span { animation:none; }
 }

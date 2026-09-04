@@ -12,7 +12,7 @@ const viewports = [
   { name: "laptop", width: 1024, height: 768 },
   { name: "desktop", width: 1440, height: 900 }
 ];
-const pages = ["/", "/projekty/", "/projekty/maciejpuczynski/", "/kontakt/", "/admin/"];
+const pages = ["/", "/projekty/", "/projekty/maciejpuczynski/", "/kontakt/", "/en/", "/en/projects/", "/en/projects/maciejpuczynski/", "/en/contact/", "/admin/"];
 const failures = [];
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ executablePath, headless: true });
@@ -34,6 +34,8 @@ for (const viewport of viewports) {
   await page.screenshot({ path: path.join(output, `${viewport.name}-home.png`), fullPage: true });
   await page.goto(`${baseUrl}/projekty/`, { waitUntil: "networkidle" });
   await page.screenshot({ path: path.join(output, `${viewport.name}-projects.png`), fullPage: true });
+  await page.goto(`${baseUrl}/en/`, { waitUntil: "networkidle" });
+  if (!await page.locator('.language-switch[href="/"]').count()) failures.push(`${viewport.name}: błędny przełącznik EN → PL`);
   await context.close();
 }
 const sessionContext = await browser.newContext({ viewport: { width: 1280, height: 800 } });

@@ -22,6 +22,7 @@ export class ContentRepository {
     const data = {
       layout: "layouts/project.njk", permalink: `/projekty/${slug}/index.html`,
       title: project.title, slug, summary: project.summary, category: project.category,
+      alternateUrl: `/en/projects/${slug}/`, titleEn: project.titleEn || original?.titleEn || "", summaryEn: project.summaryEn || original?.summaryEn || "", categoryEn: project.categoryEn || original?.categoryEn || "", bodyEn: project.bodyEn || original?.bodyEn || "",
       technologies: project.technologies, image: project.image, imageAlt: project.imageAlt,
       liveUrl: project.liveUrl || "", repositoryUrl: project.repositoryUrl || "",
       inProgress: Boolean(project.inProgress), featured: Boolean(project.featured),

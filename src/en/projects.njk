@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+lang: en
+pageKey: projects
+permalink: /en/projects/index.html
+alternateUrl: /projekty/
+---
+<header class="page-hero"><div class="shell page-hero__grid"><div><p class="eyebrow reveal">Portfolio</p><h1 class="reveal">Ideas turned into<br><em>working products.</em></h1></div><div class="projects-hero-aside reveal"><div class="projects-hero-visual" aria-hidden="true"><span>01</span><span>02</span><span>03</span><span>04</span></div><p>Websites, tools and digital products. Every project connects a real need with thoughtful architecture and care for quality.</p></div></div></header>
+<section class="experience-ribbon" aria-labelledby="brands-title-en"><div class="shell experience-ribbon__intro reveal"><p class="eyebrow">Project experience</p><h2 id="brands-title-en">I have worked on projects delivered for recognised brands.</h2><p>As part of companies and teams responsible for quality, delivery and digital product development.</p></div>
+  <div class="brand-constellation" aria-label="Selected brands"><div class="brand-constellation__core">10+<small>years</small></div><span>Mazda</span><span>TUI</span><span>Kyocera</span><span>PZPN</span><span>Ubisoft</span><span>Riot Games</span><span>Capcom</span><span>CD Projekt RED</span></div>
+</section>
+<section class="section projects-list"><div class="shell">
+  <div class="projects-offer-heading reveal"><p class="eyebrow">What we can build</p><h2>Example projects I can create for you today.</h2><p>From a fast service website to a content platform with its own publishing dashboard. These examples show possible directions — scope and character are always tailored to the real need.</p></div>
+  <div class="project-toolbar reveal"><p><strong>{{ collections.projects.length }}</strong> projects</p><div class="filter-list" aria-label="Project filters"><button class="is-active" type="button" data-filter="all">All</button><button type="button" data-filter="example website">Example website</button><button type="button" data-filter="example cms">Example CMS</button><button type="button" data-filter="coming soon">Coming soon</button></div></div>
+  <div class="project-grid project-grid--listing">{% for project in collections.projects %}<div data-project-category="{{ project.data.categoryEn | lower }}">{% include "components/project-card.njk" %}</div>{% endfor %}</div>
+</div></section>

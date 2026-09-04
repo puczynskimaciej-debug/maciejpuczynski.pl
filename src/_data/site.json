@@ -37,5 +37,25 @@
       "ogImage": "/assets/images/brand/mp-logo.png",
       "canonical": "https://maciejpuczynski.pl/kontakt/"
     }
+  },
+  "seoEn": {
+    "home": {
+      "title": "Maciej Puczyński — QA, Project Management and web solutions",
+      "description": "I combine quality, project management and technology. I build websites, tools and applications and help teams deliver better IT projects.",
+      "ogImage": "/assets/images/brand/mp-logo.png",
+      "canonical": "https://maciejpuczynski.pl/en/"
+    },
+    "projects": {
+      "title": "My projects — Maciej Puczyński",
+      "description": "Selected websites, tools and digital products created and developed by Maciej Puczyński.",
+      "ogImage": "/assets/images/brand/mp-logo.png",
+      "canonical": "https://maciejpuczynski.pl/en/projects/"
+    },
+    "contact": {
+      "title": "Contact — Maciej Puczyński",
+      "description": "Get in touch about a website, tool, application, product quality or project delivery.",
+      "ogImage": "/assets/images/brand/mp-logo.png",
+      "canonical": "https://maciejpuczynski.pl/en/contact/"
+    }
   }
 }

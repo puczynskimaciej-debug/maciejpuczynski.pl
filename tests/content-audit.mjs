@@ -10,6 +10,13 @@ const pages = [
   "projekty/polacy-w-belgii/index.html",
   "projekty/premiera-aplikacji/index.html",
   "projekty/premiera-narzedzia/index.html",
+  "en/index.html",
+  "en/projects/index.html",
+  "en/contact/index.html",
+  "en/projects/maciejpuczynski/index.html",
+  "en/projects/polacy-w-belgii/index.html",
+  "en/projects/premiera-aplikacji/index.html",
+  "en/projects/premiera-narzedzia/index.html",
   "admin/index.html"
 ];
 const failures = [];
@@ -17,13 +24,17 @@ for (const page of pages) {
   const file = path.join(output, page);
   try {
     const html = await readFile(file, "utf8");
-    if (!/<html lang="pl">/.test(html)) failures.push(`${page}: brak języka dokumentu`);
+    const expectedLanguage = page.startsWith("en/") ? "en" : "pl";
+    if (!new RegExp(`<html lang="${expectedLanguage}">`).test(html)) failures.push(`${page}: nieprawidłowy język dokumentu`);
     if (!/<meta name="viewport"/.test(html)) failures.push(`${page}: brak viewport`);
     if (!page.startsWith("admin/")) {
       if (!/<meta name="description" content="[^"]+"/.test(html)) failures.push(`${page}: brak meta description`);
       if (!/<link rel="canonical" href="https:\/\/maciejpuczynski\.pl/.test(html)) failures.push(`${page}: brak canonical`);
-      if (!/href="\/projekty\/"/.test(html) || !/href="\/kontakt\/"/.test(html)) failures.push(`${page}: brak wspólnej nawigacji`);
+      const projectPath = expectedLanguage === "en" ? "/en/projects/" : "/projekty/";
+      const contactPath = expectedLanguage === "en" ? "/en/contact/" : "/kontakt/";
+      if (!html.includes(`href="${projectPath}"`) || !html.includes(`href="${contactPath}"`)) failures.push(`${page}: brak wspólnej nawigacji`);
       if (!/<footer class="site-footer">/.test(html)) failures.push(`${page}: brak wspólnej stopki`);
+      if (!/class="language-switch"/.test(html)) failures.push(`${page}: brak przełącznika języka`);
     }
   } catch { failures.push(`${page}: plik nie istnieje`); }
 }

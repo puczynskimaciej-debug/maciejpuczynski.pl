@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pl">
+<html lang="{{ lang or 'pl' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,13 +14,13 @@
   <script src="/assets/js/site.js" defer></script>
 </head>
 <body data-page="{{ pageKey }}">
-  <a class="skip-link" href="#main">Przejdź do treści</a>
+  <a class="skip-link" href="#main">{% if lang == "en" %}Skip to content{% else %}Przejdź do treści{% endif %}</a>
   {% if pageKey == "home" and home.introEnabled %}
   <div class="splash" data-splash aria-hidden="true">
     <div class="splash-orbit"></div>
     <div class="splash-logo"><span>MP</span><small>MANAGE PROJECTS</small></div>
-    <p>Jakość. Projekty. Technologia.</p>
-    <button type="button" data-splash-skip>Pomiń</button>
+    <p>{% if lang == "en" %}Quality. Projects. Technology.{% else %}Jakość. Projekty. Technologia.{% endif %}</p>
+    <button type="button" data-splash-skip>{% if lang == "en" %}Skip{% else %}Pomiń{% endif %}</button>
   </div>
   {% endif %}
   {% include "components/header.njk" %}

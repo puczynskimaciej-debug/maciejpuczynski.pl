@@ -1,7 +1,9 @@
-{% set meta = site.seo[pageKey] %}
+{% set meta = site.seoEn[pageKey] if lang == "en" else site.seo[pageKey] %}
 <title>{{ meta.title }}</title>
 <meta name="description" content="{{ meta.description }}">
 <link rel="canonical" href="{{ meta.canonical or (site.url + page.url) }}">
+<link rel="alternate" hreflang="{{ 'pl' if lang == 'en' else 'en' }}" href="{{ site.url }}{{ alternateUrl }}">
+<link rel="alternate" hreflang="{{ lang or 'pl' }}" href="{{ meta.canonical or (site.url + page.url) }}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="{{ site.locale }}">
 <meta property="og:site_name" content="{{ site.name }}">
