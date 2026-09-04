@@ -8,7 +8,8 @@ const pages = [
   "kontakt/index.html",
   "projekty/maciejpuczynski/index.html",
   "projekty/polacy-w-belgii/index.html",
-  "projekty/transladio/index.html",
+  "projekty/premiera-aplikacji/index.html",
+  "projekty/premiera-narzedzia/index.html",
   "admin/index.html"
 ];
 const failures = [];

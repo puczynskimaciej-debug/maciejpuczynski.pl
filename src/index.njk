@@ -20,10 +20,10 @@ permalink: /index.html
     </div>
     <div class="hero-visual reveal" data-pointer-glow>
       <div class="visual-grid" aria-hidden="true"></div>
-      <div class="hero-monogram">MP</div>
-      <div class="orbit orbit--one"><span>QA</span></div>
-      <div class="orbit orbit--two"><span>PM</span></div>
-      <div class="orbit orbit--three"><span>WEB</span></div>
+      <div class="hero-monogram"><span>MP</span></div>
+      <div class="orbit orbit--one"><span>QA</span><span>AI</span></div>
+      <div class="orbit orbit--two"><span>PM</span><span>Business</span></div>
+      <div class="orbit orbit--three"><span>Web</span><span>Analytics</span></div>
       <p><span></span> Dostępny do ciekawych projektów</p>
     </div>
   </div>
@@ -40,8 +40,9 @@ permalink: /index.html
     </div>
     <div class="competency-grid">
       {% for item in home.competencies.items %}
-      <article class="competency-card reveal">
+      <article class="competency-card competency-card--{{ loop.index }} reveal">
         <span>{{ item.number }}</span>
+        <i class="competency-icon" aria-hidden="true">{% if loop.index == 1 %}✓{% elif loop.index == 2 %}↗{% elif loop.index == 3 %}&lt;/&gt;{% else %}✦{% endif %}</i>
         <h3>{{ item.title }}</h3>
         <p>{{ item.description }}</p>
       </article>
@@ -61,7 +62,7 @@ permalink: /index.html
     {% set featuredProjects = collections.projects | featured %}
     {% if featuredProjects.length %}
     <div class="project-grid">
-      {% for project in featuredProjects | limit(3) %}{% include "components/project-card.njk" %}{% endfor %}
+      {% for project in featuredProjects | limit(4) %}{% include "components/project-card.njk" %}{% endfor %}
     </div>
     {% else %}
     <div class="empty-state"><span>MP</span><h3>Projekty pojawią się tutaj wkrótce.</h3><p>Dodaj pierwszy wyróżniony projekt w panelu CMS.</p></div>

@@ -1,10 +1,10 @@
 ---
 layout: layouts/project.njk
 permalink: "/projekty/polacy-w-belgii/index.html"
-title: "Polacy w Belgii"
+title: "Serwis z własnym prostym CMS-em"
 slug: "polacy-w-belgii"
-summary: "Serwis informacyjny z własnym, plikowym CMS-em i publikacją opartą o GitHub oraz Netlify."
-category: "Serwis i CMS"
+summary: "Przykładowa strona do samodzielnego publikowania artykułów, zdjęć i aktualizacji bez bazy danych oraz stałego serwera."
+category: "Przykładowy CMS"
 technologies: ["Eleventy", "GitHub API", "GitHub OAuth", "Netlify"]
 image: "/assets/images/projects/polacy-w-belgii.svg"
 imageAlt: "Neutralny mockup serwisu Polacy w Belgii"
@@ -15,6 +15,6 @@ featured: true
 order: 2
 published: true
 ---
-Projekt wykorzystuje Eleventy, treści Markdown i JSON, GitHub Contents API oraz statyczny panel administracyjny.
+Przykładem takiego rozwiązania jest serwis Polacy w Belgii. Własny panel pozwala zarządzać artykułami, zdjęciami i treściami strony bez edytowania kodu.
 
-Każdy zapis w CMS-ie tworzy commit, a Netlify automatycznie przebudowuje i publikuje stronę. Jedyna funkcja serwerowa służy do bezpiecznej wymiany kodu GitHub OAuth na token.
+Treści są przechowywane w plikach Markdown i JSON. Każdy zapis tworzy commit w GitHubie, a Netlify automatycznie publikuje aktualną wersję — bez bazy danych, VPS-a i stałego backendu.

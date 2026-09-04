@@ -1,10 +1,10 @@
 ---
 layout: layouts/project.njk
 permalink: "/projekty/maciejpuczynski/index.html"
-title: "maciejpuczynski.pl"
+title: "Nowoczesne portfolio usługowe"
 slug: "maciejpuczynski"
-summary: "Osobista strona i portfolio łączące obszary QA, Project Managementu oraz tworzenia produktów cyfrowych."
-category: "Portfolio"
+summary: "Przykładowa szybka strona usługowa prezentująca kompetencje, projekty i ofertę w czytelnej, angażującej formie."
+category: "Przykładowa strona"
 technologies: ["Eleventy", "Nunjucks", "JavaScript", "Netlify"]
 image: "/assets/images/projects/maciejpuczynski.svg"
 imageAlt: "Abstrakcyjny podgląd strony maciejpuczynski.pl"
@@ -15,6 +15,6 @@ featured: true
 order: 1
 published: true
 ---
-Projekt rozwijający dotychczasową stronę osobistą w kompletne portfolio z trzema głównymi podstronami oraz własnym panelem CMS.
+Przykładem takiej realizacji jest strona, na której właśnie jesteś — maciejpuczynski.pl. Łączy ofertę, portfolio i kontakt w lekkim, responsywnym interfejsie.
 
-Treści są przechowywane w plikach Markdown i JSON, a publikacja została zaprojektowana z myślą o GitHubie i Netlify.
+To dobry kierunek dla specjalisty, małej firmy lub marki osobistej, która potrzebuje szybko pokazać swoje usługi, doświadczenie i charakter bez ciężkiego zaplecza technicznego.
