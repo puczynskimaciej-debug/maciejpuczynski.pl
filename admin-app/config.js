@@ -1,8 +1,8 @@
 export const cmsConfig = Object.freeze({
   projectName: "Maciej Puczyński",
   github: {
-    owner: "UZUPELNIJ_GITHUB_OWNER",
-    repo: "UZUPELNIJ_GITHUB_REPO",
+    owner: "puczynskimaciej-debug",
+    repo: "maciejpuczynski.pl",
     branch: "cms-migration",
     clientId: "UZUPELNIJ_GITHUB_CLIENT_ID",
     scope: "public_repo"
